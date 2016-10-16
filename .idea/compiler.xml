@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="datagrid" />
+        <module name="datastreams" />
+        <module name="domain" />
+        <module name="gearpump" />
+        <module name="TradeLoader" />
+        <module name="TradeQuery" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="datagrid" target="1.5" />
+      <module name="datastreams" target="1.5" />
+      <module name="domain" target="1.5" />
+      <module name="gearpump" target="1.5" />
+      <module name="sandpit" target="1.5" />
+      <module name="TradeLoader" target="1.8" />
+      <module name="TradeQuery" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
