@@ -5,7 +5,6 @@ import com.example.projects.domain.enums.VenueTypeEnum;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 
-
 import java.util.Map;
 import java.util.UUID;
 
