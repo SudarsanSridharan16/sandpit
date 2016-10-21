@@ -10,6 +10,7 @@ import java.util.UUID;
 
 /**
  * Created by oliverbuckley-salmon on 16/10/2016.
+ * Loads the Venue cache with exceution venues as part of the static data load
  */
 public class VenueLoader {
     static final String[] executionVenues = {"FXALL", "LMAX", "", "Currenex", "Bloomberg", "ICAP", "Tullet", "360T", "EBS", "CME"};
