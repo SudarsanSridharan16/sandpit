@@ -1,7 +1,7 @@
 
 .DS_Store
 
-.idea
+
 
 datagrid/datagrid.iml
 
@@ -12,3 +12,4 @@ sandpit.iml
 /gearpump/gearpump.iml
 /TradeQuery/TradeQuery.iml
 /sandpit.iml
+/.idea/
