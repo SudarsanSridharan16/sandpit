@@ -1,16 +1,15 @@
 package com.example.projects.domain;
 
-import com.example.projects.domain.enums.CurrencyEnum;
+import com.example.projects.domain.enums.CurrencyPairEnum;
 import com.example.projects.domain.enums.TradeTransactionTypeEnum;
 import com.example.projects.domain.enums.TradeTypeEnum;
 import com.google.gson.Gson;
-import org.joda.time.DateTime;
-
 import com.hazelcast.nio.ObjectDataInput;
 import com.hazelcast.nio.ObjectDataOutput;
 import com.hazelcast.nio.serialization.Portable;
 import com.hazelcast.nio.serialization.PortableReader;
 import com.hazelcast.nio.serialization.PortableWriter;
+import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -20,6 +19,8 @@ import java.util.HashMap;
  */
 
 public class Trade implements Portable{
+
+    public static final int ID = 4;
 
     private String tradeId;
     private HashMap<String,String> altTradeIds = new HashMap<String, String>();
@@ -31,7 +32,7 @@ public class Trade implements Portable{
     private String marketId;
     private double quantity
     ,              price;
-    private CurrencyEnum currency;
+    private CurrencyPairEnum currency;
     private Venue executionVenue;
     private String Instrument;
     // Dimension Ids
@@ -41,7 +42,7 @@ public class Trade implements Portable{
     public Trade() {
     }
 
-    public Trade(String tradeId, HashMap<String, String> altTradeIds, TradeTransactionTypeEnum tradeTransactionType, TradeTypeEnum tradeType, TradeTypeEnum secondaryTradeTypeEnum, DateTime originalTradeDate, HashMap<String, Party> parties, String marketId, double quantity, double price, CurrencyEnum currency, Venue executionVenue, String instrument) {
+    public Trade(String tradeId, HashMap<String, String> altTradeIds, TradeTransactionTypeEnum tradeTransactionType, TradeTypeEnum tradeType, TradeTypeEnum secondaryTradeTypeEnum, DateTime originalTradeDate, HashMap<String, Party> parties, String marketId, double quantity, double price, CurrencyPairEnum currency, Venue executionVenue, String instrument) {
         this.tradeId = tradeId;
         this.altTradeIds = altTradeIds;
         this.tradeTransactionType = tradeTransactionType;
@@ -58,11 +59,11 @@ public class Trade implements Portable{
     }
 
     public int getFactoryId() {
-        return 0;
+        return 1;
     }
 
     public int getClassId() {
-        return 4;
+        return ID;
     }
 
     public String getTradeId() {
@@ -145,11 +146,11 @@ public class Trade implements Portable{
         this.price = price;
     }
 
-    public CurrencyEnum getCurrency() {
+    public CurrencyPairEnum getCurrency() {
         return currency;
     }
 
-    public void setCurrency(CurrencyEnum currency) {
+    public void setCurrency(CurrencyPairEnum currency) {
         this.currency = currency;
     }
 

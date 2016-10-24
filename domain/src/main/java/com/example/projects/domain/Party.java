@@ -16,6 +16,9 @@ import java.util.HashMap;
  * Created by oliverbuckley-salmon on 10/08/2016.
  */
 public class Party implements Portable{
+
+    public static final int ID = 3;
+
     private String partyId;
     private PartyRoleEnum partyRole;
     private HashMap<String,Party> subParties;
@@ -30,11 +33,11 @@ public class Party implements Portable{
     }
 
     public int getFactoryId() {
-        return 0;
+        return 1;
     }
 
     public int getClassId() {
-        return 3;
+        return ID;
     }
 
     public String getPartyId() {

@@ -16,6 +16,8 @@ import java.io.IOException;
  */
 public class Venue implements Portable{
 
+    public static final int ID = 2;
+
     private String venueId
     ,              name;
     private VenueTypeEnum venueType;
@@ -55,11 +57,11 @@ public class Venue implements Portable{
     }
 
     public int getFactoryId() {
-        return 0;
+        return 1;
     }
 
     public int getClassId() {
-        return 2;
+        return ID;
     }
 
 

@@ -22,6 +22,7 @@ public class VenueLoader {
             Venue venue = new Venue(UUID.randomUUID().toString(), executionVenues[i], VenueTypeEnum.valueOf("ELECTRONIC"));
             venuesCache.put(venue.getVenueId(), venue);
         }
+        System.out.println(venuesCache.size() + "Venues loaded");
 
     }
 }

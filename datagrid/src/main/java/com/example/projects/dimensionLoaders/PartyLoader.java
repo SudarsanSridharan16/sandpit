@@ -11,6 +11,7 @@ import java.util.UUID;
 
 /**
  * Created by oliverbuckley-salmon on 16/10/2016.
+ * Loads the Party cache with counterparties as part of the static data load
  */
 public class PartyLoader {
 
@@ -34,6 +35,7 @@ public class PartyLoader {
             Party party = new Party(UUID.randomUUID().toString(), PartyRoleEnum.valueOf("CLIENT"), new HashMap<String, Party>());
             partyCache.put(party.getPartyId(), party);
         }
+        System.out.println(partyCache.size() + "Parties loaded");
     }
 
     private static void loadPartyFile(String path) {

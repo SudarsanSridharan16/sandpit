@@ -21,7 +21,7 @@
     - no hazelcast.xml if present
 
 -->
-<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.5.xsd"
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.7.xsd"
            xmlns="http://www.hazelcast.com/schema/config"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <group>
@@ -328,7 +328,7 @@
         <async-backup-count>0</async-backup-count>
     </semaphore>
 
-    <reliable-topic name="default">
+    <reliable-topic name="TRADE_TOPIC">
         <read-batch-size>10</read-batch-size>
         <topic-overload-policy>BLOCK</topic-overload-policy>
         <statistics-enabled>true</statistics-enabled>
@@ -344,8 +344,13 @@
 
     <serialization>
         <portable-version>0</portable-version>
+        <portable-factories>
+            <portable-factory factory-id="1">com.example.projects.portablefactory.KappaPortableFactory</portable-factory>
+        </portable-factories>
     </serialization>
 
     <services enable-defaults="true"/>
+
+
 
 </hazelcast>

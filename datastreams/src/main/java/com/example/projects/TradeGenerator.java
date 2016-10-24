@@ -2,13 +2,12 @@ package com.example.projects;
 
 import com.example.projects.domain.Trade;
 import com.example.projects.domain.Venue;
-import com.example.projects.domain.enums.CurrencyEnum;
+import com.example.projects.domain.enums.CurrencyPairEnum;
 import org.apache.kafka.clients.producer.KafkaProducer;
 
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.UUID;
-
 
 import static com.hazelcast.internal.util.ThreadLocalRandom.current;
 
@@ -84,7 +83,7 @@ public class TradeGenerator
         for(int i=0;i<10000;i++) {
             Trade trade = new Trade();
             trade.setTradeId(UUID.randomUUID().toString());
-            trade.setCurrency(CurrencyEnum.valueOf(getCurrency()));
+            trade.setCurrency(CurrencyPairEnum.valueOf(getCurrency()));
             trade.setAltTradeIds(new HashMap<String, String>());
             Venue venue = new Venue();
             venue.setName(getVenue());
