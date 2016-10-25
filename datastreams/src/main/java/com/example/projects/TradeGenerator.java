@@ -1,13 +1,17 @@
 package com.example.projects;
 
+import com.example.projects.domain.Instrument;
+import com.example.projects.domain.Party;
 import com.example.projects.domain.Trade;
 import com.example.projects.domain.Venue;
-import com.example.projects.domain.enums.CurrencyPairEnum;
+import com.example.projects.domain.enums.TradeTypeEnum;
+import com.hazelcast.core.Hazelcast;
+import com.hazelcast.core.HazelcastInstance;
 import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.joda.time.DateTime;
 
-import java.util.HashMap;
-import java.util.Properties;
-import java.util.UUID;
+import java.util.*;
 
 import static com.hazelcast.internal.util.ThreadLocalRandom.current;
 
@@ -18,24 +22,22 @@ import static com.hazelcast.internal.util.ThreadLocalRandom.current;
  */
 public class TradeGenerator
 {
-    static final String[] currency = {"EUR", "GBP", "USD", "CAD", "AUD", "CNY"};
-    static final String[] venues = {"FXALL", "LMAX", "", "Currenex", "Bloomberg", "ICAP", "Tullet"};
-    static final String[] counterParties = {"Blackrock", "GSAM", "UBSGAM", "Fidelity", "Bloomberg", "ICAP", "Tullet"};
 
 
-    public static String getCurrency(){
-        int rndInt = current().nextInt(0, currency.length);
-        return currency[rndInt];
+
+    public static Instrument getInstrumnet(Instrument[] instruments){
+        int rndInt = current().nextInt(0, instruments.length);
+        return instruments[rndInt];
 
     }
 
-    public static String getVenue(){
+    public static Venue getVenue(Venue[] venues){
         int rndInt = current().nextInt(0, venues.length);
         return venues[rndInt];
 
     }
 
-    public static String getCounterParty(){
+    public static Party getCounterParty(Party[] counterParties){
         int rndInt = current().nextInt(0, counterParties.length);
         return counterParties[rndInt];
 
@@ -67,6 +69,18 @@ public class TradeGenerator
 
     public static void main( String[] args )
     {
+        // Get the dimension cached data
+        HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance();
+        Map<String, Venue> venuesCache = hazelcastInstance.getReplicatedMap("venue");
+        Map<String, Venue> partiesCache = hazelcastInstance.getReplicatedMap("party");
+        Map<String, Venue> instrumentsCache = hazelcastInstance.getReplicatedMap("instrument");
+
+        Venue[] venues = new Venue[venuesCache.size()];
+        venues = venuesCache.values().toArray(venues);
+        Party[] parties = new Party[partiesCache.size()];
+        parties = partiesCache.values().toArray(parties);
+        Instrument[] instruments = new Instrument[instrumentsCache.size()];
+        instruments = instrumentsCache.values().toArray(instruments);
 
         // Generate the test data
 
@@ -74,36 +88,44 @@ public class TradeGenerator
        KafkaProducer<Integer, String> producer;
         String topic = "trades";
         Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
+        props.put("bootstrap.servers", "localhost:32769");
         props.put("client.id", "TradeProducer");
         props.put("key.serializer", "org.apache.kafka.common.serialization.IntegerSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         producer = new KafkaProducer<Integer, String>(props);
 
-        for(int i=0;i<10000;i++) {
+        for(int i=0;i<10;i++) {
             Trade trade = new Trade();
             trade.setTradeId(UUID.randomUUID().toString());
-            trade.setCurrency(CurrencyPairEnum.valueOf(getCurrency()));
             trade.setAltTradeIds(new HashMap<String, String>());
-            Venue venue = new Venue();
-            venue.setName(getVenue());
-            trade.setExecutionVenue(venue);
+            trade.setExecutionVenue(getVenue(venues));
+            trade.setCurrencyPair(getInstrumnet(instruments).getCurrencyPair());
+            trade.setInstrument(getInstrumnet(instruments).getSymbol());
+            trade.setMarketId(getVenue(venues).getName());
+            trade.setOriginalTradeDate(new DateTime(new Date()));
+            trade.setPrice(getPrice());
+            trade.setQuantity(getSize());
+            HashMap<String, Party> partyHashMap = new HashMap<String,Party>();
+            Party party = getCounterParty(parties);
+            partyHashMap.put("COUNTERPARTY", party);
+            trade.setParties(partyHashMap);
+            trade.setTradeType(TradeTypeEnum.REGULAR_TRADE);
 
-        /*
-
+            System.out.println(trade.toJSON());
 
             try {
-                producer.send(new ProducerRecord<Integer, String>(topic, 1, trade.toJSON())).get();
-
+                producer.send(new ProducerRecord<Integer, String>(topic, i, trade.toJSON())).get();
+                //Map<String, Trade> tradeCache = hazelcastInstance.getMap("trade");
+                //tradeCache.put(trade.getTradeId(), trade);
             }
             catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        long end = System.currentTimeMillis();
-        System.out.println("10K Trades created and queued in "+ ((end-start)/1000) +"seconds");
-        */
+        //long end = System.currentTimeMillis();
+        System.out.println("10K Trades created and queued in " +"seconds");
+
         }
 
     }
-}
+

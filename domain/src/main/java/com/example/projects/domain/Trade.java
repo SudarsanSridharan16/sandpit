@@ -32,17 +32,18 @@ public class Trade implements Portable{
     private String marketId;
     private double quantity
     ,              price;
-    private CurrencyPairEnum currency;
+    private CurrencyPairEnum currencyPair;
     private Venue executionVenue;
     private String Instrument;
     // Dimension Ids
     private String  instrumentDimId
-    ,               executionVenueDimId;
+    ,               executionVenueDimId
+    ,               counterPartyDimId;
 
     public Trade() {
     }
 
-    public Trade(String tradeId, HashMap<String, String> altTradeIds, TradeTransactionTypeEnum tradeTransactionType, TradeTypeEnum tradeType, TradeTypeEnum secondaryTradeTypeEnum, DateTime originalTradeDate, HashMap<String, Party> parties, String marketId, double quantity, double price, CurrencyPairEnum currency, Venue executionVenue, String instrument) {
+    public Trade(String tradeId, HashMap<String, String> altTradeIds, TradeTransactionTypeEnum tradeTransactionType, TradeTypeEnum tradeType, TradeTypeEnum secondaryTradeTypeEnum, DateTime originalTradeDate, HashMap<String, Party> parties, String marketId, double quantity, double price, CurrencyPairEnum currencyPair, Venue executionVenue, String instrument) {
         this.tradeId = tradeId;
         this.altTradeIds = altTradeIds;
         this.tradeTransactionType = tradeTransactionType;
@@ -53,7 +54,7 @@ public class Trade implements Portable{
         this.marketId = marketId;
         this.quantity = quantity;
         this.price = price;
-        this.currency = currency;
+        this.currencyPair = currencyPair;
         this.executionVenue = executionVenue;
         Instrument = instrument;
     }
@@ -146,12 +147,12 @@ public class Trade implements Portable{
         this.price = price;
     }
 
-    public CurrencyPairEnum getCurrency() {
-        return currency;
+    public CurrencyPairEnum getCurrencyPair() {
+        return currencyPair;
     }
 
-    public void setCurrency(CurrencyPairEnum currency) {
-        this.currency = currency;
+    public void setCurrencyPair(CurrencyPairEnum currencyPair) {
+        this.currencyPair = currencyPair;
     }
 
     public Venue getExecutionVenue() {
@@ -170,6 +171,42 @@ public class Trade implements Portable{
         Instrument = instrument;
     }
 
+    public String getInstrumentDimId() {
+        return instrumentDimId;
+    }
+
+    public void setInstrumentDimId(String instrumentDimId) {
+        this.instrumentDimId = instrumentDimId;
+    }
+
+    public String getExecutionVenueDimId() {
+        return executionVenueDimId;
+    }
+
+    public void setExecutionVenueDimId(String executionVenueDimId) {
+        this.executionVenueDimId = executionVenueDimId;
+    }
+
+    public String getCounterPartyDimId() {
+        return counterPartyDimId;
+    }
+
+    public void setCounterPartyDimId(String counterPartyDimId) {
+        this.counterPartyDimId = counterPartyDimId;
+    }
+
+
+
+
+
+    public String toJSON(){
+        Gson gson = new Gson();
+        //String json = gson.toJson(obj);
+        return gson.toJson(this);
+
+    }
+
+
     public void writePortable(PortableWriter out) throws IOException {
         out.writeUTF("tradeId", tradeId);
         out.writeUTF("marketId", marketId);
@@ -177,6 +214,9 @@ public class Trade implements Portable{
         out.writeDouble("price", price);
         out.writePortable("executionVenue", executionVenue);
         out.writeUTF("Instrument", Instrument);
+        out.writeUTF("instrumentDimId", instrumentDimId);
+        out.writeUTF("executionVenueDimId", executionVenueDimId);
+        out.writeUTF("counterPartyDimId", counterPartyDimId);
         ObjectDataOutput rawDataOutput = out.getRawDataOutput();
         rawDataOutput.writeObject(altTradeIds);
         rawDataOutput.writeObject(tradeTransactionType);
@@ -184,7 +224,7 @@ public class Trade implements Portable{
         rawDataOutput.writeObject(secondaryTradeTypeEnum);
         rawDataOutput.writeObject(originalTradeDate);
         rawDataOutput.writeObject(parties);
-        rawDataOutput.writeObject(currency);
+        rawDataOutput.writeObject(currencyPair);
     }
 
 
@@ -195,6 +235,9 @@ public class Trade implements Portable{
         this.price = in.readDouble("price");
         this.executionVenue = in.readPortable("executionVenue");
         this.Instrument = in.readUTF("Instrument");
+        this.instrumentDimId = in.readUTF("instrumentDimId");
+        this.executionVenueDimId = in.readUTF("executionVenueDimId");
+        this.counterPartyDimId = in.readUTF("counterPartyDimId");
         ObjectDataInput rawDataInput = in.getRawDataInput();
         this.altTradeIds = rawDataInput.readObject();
         this.tradeTransactionType = rawDataInput.readObject();
@@ -202,15 +245,6 @@ public class Trade implements Portable{
         this.secondaryTradeTypeEnum = rawDataInput.readObject();
         this.originalTradeDate = rawDataInput.readObject();
         this.parties = rawDataInput.readObject();
-        this.currency = rawDataInput.readObject();
-    }
-
-
-
-    public String toJSON(){
-        Gson gson = new Gson();
-        //String json = gson.toJson(obj);
-        return gson.toJson(this);
-
+        this.currencyPair = rawDataInput.readObject();
     }
 }
