@@ -10,6 +10,8 @@ import com.hazelcast.core.HazelcastInstance;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
@@ -69,6 +71,8 @@ public class TradeGenerator
 
     public static void main( String[] args )
     {
+
+        Logger LOG = LoggerFactory.getLogger(TradeGenerator.class);
         // Get the dimension cached data
         HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance();
         Map<String, Venue> venuesCache = hazelcastInstance.getReplicatedMap("venue");
@@ -81,20 +85,21 @@ public class TradeGenerator
         parties = partiesCache.values().toArray(parties);
         Instrument[] instruments = new Instrument[instrumentsCache.size()];
         instruments = instrumentsCache.values().toArray(instruments);
+        final int numTrades = 10;
 
         // Generate the test data
 
         // Coonect to Kafka
        KafkaProducer<Integer, String> producer;
-        String topic = "trades";
+        final String topic = "trades";
         Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:32769");
+        props.put("bootstrap.servers", "localhost:2181");
         props.put("client.id", "TradeProducer");
         props.put("key.serializer", "org.apache.kafka.common.serialization.IntegerSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         producer = new KafkaProducer<Integer, String>(props);
-
-        for(int i=0;i<10;i++) {
+        long start = System.currentTimeMillis();
+        for(int i=0;i<numTrades;i++) {
             Trade trade = new Trade();
             trade.setTradeId(UUID.randomUUID().toString());
             trade.setAltTradeIds(new HashMap<String, String>());
@@ -111,19 +116,19 @@ public class TradeGenerator
             trade.setParties(partyHashMap);
             trade.setTradeType(TradeTypeEnum.REGULAR_TRADE);
 
-            System.out.println(trade.toJSON());
+
+            LOG.info(trade.toJSON());
 
             try {
                 producer.send(new ProducerRecord<Integer, String>(topic, i, trade.toJSON())).get();
-                //Map<String, Trade> tradeCache = hazelcastInstance.getMap("trade");
-                //tradeCache.put(trade.getTradeId(), trade);
+
             }
             catch (Exception e) {
-                e.printStackTrace();
+                LOG.error("Error putting trades on Kafka",e);
             }
         }
-        //long end = System.currentTimeMillis();
-        System.out.println("10K Trades created and queued in " +"seconds");
+        long end = System.currentTimeMillis();
+        LOG.info(numTrades+" Trades created and queued in " +(end-start)/1000+"seconds");
 
         }
 

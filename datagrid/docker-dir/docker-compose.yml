@@ -1,0 +1,17 @@
+version: '2'
+services:
+  zookeeper:
+    image: zookeeper
+    links:
+      - kappahz1
+      - kappahz2
+    ports:
+      - "2181:2181"
+
+  kappahz1:
+    image: olibs/kappahz:v2
+
+  kappahz2:
+    image: olibs/kappahz:v2
+    ports:
+      - "5701:5701"

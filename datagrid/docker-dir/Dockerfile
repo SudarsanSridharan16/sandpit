@@ -1,6 +1,14 @@
-FROM hazelcast/hazelcast:latest
-# Add your custom hazelcast.xml
+FROM hazelcast/hazelcast:v2
+# Add custom hazelcast.xml
 ADD sandpit-cache-config.xml $HZ_HOME
+# Add application jars
 ADD domain-1.0-SNAPSHOT.jar $HZ_HOME
+ADD datagrid-1.0-SNAPSHOT.jar $HZ_HOME
+# Add custom script to start Hz using all the jars and the config
+ADD startHz.sh $HZ_HOME
+# Add all the zookeeper and curator dependencies
+COPY ./lib $HZ_HOME/lib
+RUN chmod 755 $HZ_HOME/startHz.sh
+
 # Run hazelcast
-CMD ./server.sh
+CMD ./startHz.sh
