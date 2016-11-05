@@ -1,215 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8482a472-6ef8-4014-aad6-cd82bc6420b2" name="Default" comment="Too many changes to mention.&#10;Focus on adding docker-compose to start Hz cluster&#10;Added Zookeeper config for Hz node discovery &#10;Many changes to DockerFile">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/activation-1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/apacheds-i18n-2.0.0-M15.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/apacheds-kerberos-codec-2.0.0-M15.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/api-asn1-api-1.0.0-M20.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/api-util-1.0.0-M20.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/avro-1.7.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-beanutils-1.7.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-beanutils-core-1.8.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-codec-1.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-collections-3.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-compress-1.4.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-configuration-1.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-digester-1.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-el-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-httpclient-3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-io-2.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-lang-2.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-logging-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-math3-3.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/commons-net-3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-client-2.10.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-framework-2.10.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-recipes-2.10.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-test-2.10.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-x-discovery-2.10.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/findbugs-annotations-1.3.9-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/guava-12.0.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hadoop-annotations-2.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hadoop-auth-2.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hadoop-common-2.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hadoop-mapreduce-client-core-2.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hadoop-yarn-api-2.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hadoop-yarn-common-2.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hbase-annotations-1.2.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hbase-client-1.2.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hbase-common-1.2.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/hbase-protocol-1.2.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/htrace-core-3.1.0-incubating.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/httpclient-4.2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/httpcore-4.2.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/javassist-3.18.1-GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/jaxb-api-2.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/jcodings-1.0.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/jetty-util-6.1.26.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/joni-2.1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/jsch-0.1.42.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/jsr305-1.3.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/metrics-core-2.2.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/netty-all-4.0.23.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/paranamer-2.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/protobuf-java-2.5.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/slf4j-api-1.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/slf4j-log4j12-1.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/snappy-java-1.0.4.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/stax-api-1.0-2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/tools.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/xmlenc-0.52.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/xz-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/zookeeper-3.4.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/pom.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_2_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_2_5_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_2_4_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20140107.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_1_10_19.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_3_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_1_4_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/.mvn/wrapper/maven-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/.mvn/wrapper/maven-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/TradeQuery.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/mvnw" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/mvnw.cmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/src/main/java/com/example/microservices/TradeQueryApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/src/main/java/com/example/microservices/TradeQueryConf.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/src/main/java/com/example/microservices/TradeQueryRestController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/src/main/resources/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/src/test/java/com/example/microservices/TradeLoaderApplicationTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/classes/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/classes/com/example/microservices/TradeQueryApplication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/classes/com/example/microservices/TradeQueryConf.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/classes/com/example/microservices/TradeQueryRestController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/surefire-reports/TEST-com.example.microservices.TradeLoaderApplicationTests.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/surefire-reports/com.example.microservices.TradeLoaderApplicationTests.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/test-classes/com/example/microservices/TradeLoaderApplicationTests.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/tradequery-0.0.1-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TradeQuery/target/tradequery-0.0.1-SNAPSHOT.jar.original" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/docker_run_kappa_hz.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/domain-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/core-io-1.3.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-client-3.2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-framework-3.2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-recipes-3.2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-test-3.2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/curator-x-discovery-3.2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/guava-16.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/java-client-2.3.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/javacc-5.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/rxjava-1.1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/slf4j-api-1.7.21.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/slf4j-log4j12-1.7.21.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/zookeeper-3.5.1-alpha.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/src/bin/loadParties.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datagrid/src/bin/startCacheNode.sh" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/netty-3.7.0.Final.jar" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/netty-3.6.2.Final.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/datagrid/src/main/java/com/example/projects/dimensionLoaders/InstrumentLoader.java" afterPath="$PROJECT_DIR$/database/src/main/java/com/example/projects/database/loaders/InstrumentLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/datagrid/src/main/java/com/example/projects/dimensionLoaders/PartyLoader.java" afterPath="$PROJECT_DIR$/database/src/main/java/com/example/projects/database/loaders/PartyLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/datagrid/src/main/java/com/example/projects/dimensionLoaders/VenueLoader.java" afterPath="$PROJECT_DIR$/database/src/main/java/com/example/projects/database/loaders/VenueLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/docker-dir/datagrid-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/datagrid/docker-dir/datagrid-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/docker-dir/lib/domain-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/datagrid/docker-dir/lib/domain-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/target/datagrid-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/datagrid/target/datagrid-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/target/test-classes/com/example/projects/AppTest.class" afterPath="$PROJECT_DIR$/datagrid/target/test-classes/com/example/projects/AppTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/target/classes/com/example/projects/TradeGenerator.class" afterPath="$PROJECT_DIR$/datastreams/target/classes/com/example/projects/TradeGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/target/datastreams-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/datastreams/target/datastreams-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/target/test-classes/com/example/projects/TradeGeneratorTest.class" afterPath="$PROJECT_DIR$/datastreams/target/test-classes/com/example/projects/TradeGeneratorTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/Instrument.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/Instrument.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/Party.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/Party.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/Trade.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/Trade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/Venue.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/Venue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/ExecutionTypeEnum.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/ExecutionTypeEnum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/PartyRoleEnum.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/PartyRoleEnum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/TradeTransactionTypeEnum.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/TradeTransactionTypeEnum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/TradeTypeEnum.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/TradeTypeEnum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/VenueTypeEnum.class" afterPath="$PROJECT_DIR$/domain/target/classes/com/example/projects/domain/enums/VenueTypeEnum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/domain-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/domain/target/domain-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/test-classes/com/example/projects/AppTest.class" afterPath="$PROJECT_DIR$/domain/target/test-classes/com/example/projects/AppTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearpump/target/gearpump-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/gearpump/target/gearpump-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearpump/target/test-classes/com/example/projects/AppTest.class" afterPath="$PROJECT_DIR$/gearpump/target/test-classes/com/example/projects/AppTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/datagrid.iml" afterPath="$PROJECT_DIR$/datagrid/datagrid.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/docker-dir/Dockerfile" afterPath="$PROJECT_DIR$/datagrid/docker-dir/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/docker-dir/docker-compose.yml" afterPath="$PROJECT_DIR$/datagrid/docker-dir/docker-compose.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/docker-dir/log4j.properties" afterPath="$PROJECT_DIR$/datagrid/docker-dir/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/docker-dir/sandpit-cache-config.xml" afterPath="$PROJECT_DIR$/datagrid/docker-dir/sandpit-cache-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/docker-dir/startHz.sh" afterPath="$PROJECT_DIR$/datagrid/docker-dir/startHz.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/pom.xml" afterPath="$PROJECT_DIR$/datagrid/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/src/resources/sandpit-cache-config.xml" afterPath="$PROJECT_DIR$/datagrid/src/resources/sandpit-cache-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/datagrid/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/target/surefire-reports/TEST-com.example.projects.AppTest.xml" afterPath="$PROJECT_DIR$/datagrid/target/surefire-reports/TEST-com.example.projects.AppTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/target/surefire-reports/com.example.projects.AppTest.txt" afterPath="$PROJECT_DIR$/datagrid/target/surefire-reports/com.example.projects.AppTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/datastreams.iml" afterPath="$PROJECT_DIR$/datastreams/datastreams.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/src/main/java/com/example/projects/TradeGenerator.java" afterPath="$PROJECT_DIR$/datastreams/src/main/java/com/example/projects/TradeGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/datastreams/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/target/surefire-reports/TEST-com.example.projects.TradeGeneratorTest.xml" afterPath="$PROJECT_DIR$/datastreams/target/surefire-reports/TEST-com.example.projects.TradeGeneratorTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/target/surefire-reports/com.example.projects.TradeGeneratorTest.txt" afterPath="$PROJECT_DIR$/datastreams/target/surefire-reports/com.example.projects.TradeGeneratorTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/domain.iml" afterPath="$PROJECT_DIR$/domain/domain.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/domain/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/surefire-reports/TEST-com.example.projects.AppTest.xml" afterPath="$PROJECT_DIR$/domain/target/surefire-reports/TEST-com.example.projects.AppTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/surefire-reports/com.example.projects.AppTest.txt" afterPath="$PROJECT_DIR$/domain/target/surefire-reports/com.example.projects.AppTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearpump/gearpump.iml" afterPath="$PROJECT_DIR$/gearpump/gearpump.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearpump/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/gearpump/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearpump/target/surefire-reports/TEST-com.example.projects.AppTest.xml" afterPath="$PROJECT_DIR$/gearpump/target/surefire-reports/TEST-com.example.projects.AppTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearpump/target/surefire-reports/com.example.projects.AppTest.txt" afterPath="$PROJECT_DIR$/gearpump/target/surefire-reports/com.example.projects.AppTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sandpit.iml" afterPath="$PROJECT_DIR$/sandpit.iml" />
-    </list>
+    <list default="true" id="8482a472-6ef8-4014-aad6-cd82bc6420b2" name="Default" comment="Fixed Hz connectivity to Zookeeper, was caused by an issue with Curator version&#10;Cleaned up datagrid so it's just focused on creating the grid&#10;Added additional nodes to the datagrid docker-compose file&#10;Cleaned up data grid docker directory&#10;Moved database from Couchbase to HBase&#10;Created a new module database to specifically create the HBase schema and seed it with data" />
     <ignored path="sandpit.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -310,10 +102,8 @@
         <entry file="file://$PROJECT_DIR$/database/src/main/java/com/example/projects/database/loaders/InstrumentLoader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="277">
-              <caret line="77" column="68" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="74" column="68" selection-start-line="74" selection-start-column="68" selection-end-line="74" selection-end-column="68" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1283,7 +1073,7 @@
       <workItem from="1478253525758" duration="5010000" />
       <workItem from="1478286951069" duration="291000" />
       <workItem from="1478287281569" duration="7601000" />
-      <workItem from="1478345580647" duration="1936000" />
+      <workItem from="1478345580647" duration="2334000" />
     </task>
     <task id="LOCAL-00001" summary="Added main methods for PartyLoader added domain package as a dependency in pom">
       <created>1476642969680</created>
@@ -1341,11 +1131,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477902414066</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed Hz connectivity to Zookeeper, was caused by an issue with Curator version&#10;Cleaned up datagrid so it's just focused on creating the grid&#10;Added additional nodes to the datagrid docker-compose file&#10;Cleaned up data grid docker directory&#10;Moved database from Couchbase to HBase&#10;Created a new module database to specifically create the HBase schema and seed it with data">
+      <created>1478352933101</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1478352933101</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158546000" />
+    <option name="totallyTimeSpent" value="158944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1434,7 +1231,8 @@
     <MESSAGE value="Fixed serialization issues when loading static into the caches&#10;Created cache loaders for static data&#10;Created docker file for Hazelcast containers" />
     <MESSAGE value="Fixed TradeGenerator so it now reads data from the caches and gnerates the trade objects which GSON can serialize to JSON.&#10;Need to fix places messages on container basd Kafka" />
     <MESSAGE value="Too many changes to mention.&#10;Focus on adding docker-compose to start Hz cluster&#10;Added Zookeeper config for Hz node discovery &#10;Many changes to DockerFile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Too many changes to mention.&#10;Focus on adding docker-compose to start Hz cluster&#10;Added Zookeeper config for Hz node discovery &#10;Many changes to DockerFile" />
+    <MESSAGE value="Fixed Hz connectivity to Zookeeper, was caused by an issue with Curator version&#10;Cleaned up datagrid so it's just focused on creating the grid&#10;Added additional nodes to the datagrid docker-compose file&#10;Cleaned up data grid docker directory&#10;Moved database from Couchbase to HBase&#10;Created a new module database to specifically create the HBase schema and seed it with data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Hz connectivity to Zookeeper, was caused by an issue with Curator version&#10;Cleaned up datagrid so it's just focused on creating the grid&#10;Added additional nodes to the datagrid docker-compose file&#10;Cleaned up data grid docker directory&#10;Moved database from Couchbase to HBase&#10;Created a new module database to specifically create the HBase schema and seed it with data" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1624,6 +1422,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1646,6 +1445,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1781,10 +1581,8 @@
     <entry file="file://$PROJECT_DIR$/database/src/main/java/com/example/projects/database/loaders/InstrumentLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
-          <caret line="77" column="68" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="74" column="68" selection-start-line="74" selection-start-column="68" selection-end-line="74" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
