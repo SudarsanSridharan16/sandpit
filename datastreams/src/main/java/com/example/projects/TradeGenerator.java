@@ -93,7 +93,7 @@ public class TradeGenerator
        KafkaProducer<Integer, String> producer;
         final String topic = "trades";
         Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:2181");
+        props.put("bootstrap.servers", "138.68.172.212:2181");
         props.put("client.id", "TradeProducer");
         props.put("key.serializer", "org.apache.kafka.common.serialization.IntegerSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");

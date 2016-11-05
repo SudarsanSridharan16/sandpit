@@ -8,9 +8,9 @@
   <modules>
     <module>datagrid</module>
     <module>domain</module>
-    <module>TradeQuery</module>
     <module>datastreams</module>
       <module>gearpump</module>
+      <module>database</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -18,8 +18,12 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+    <curation.version>2.10.0</curation.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
   </properties>
+
+
 
   <dependencies>
     <!-- https://mvnrepository.com/artifact/com.hazelcast/hazelcast-all -->
@@ -30,16 +34,21 @@
     </dependency>
     <dependency>
       <groupId>org.apache.curator</groupId>
-      <artifactId>curator-test</artifactId>
-      <version>3.2.0</version>
+      <artifactId>curator-framework</artifactId>
+      <version>${curation.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.curator</groupId>
       <artifactId>curator-x-discovery</artifactId>
-      <version>3.2.0</version>
+      <version>${curation.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.hazelcast</groupId>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-test</artifactId>
+      <version>${curation.version}</version>
+    </dependency>
+    <dependency>
+       <groupId>com.hazelcast</groupId>
       <artifactId>hazelcast-zookeeper</artifactId>
       <version>3.6.1</version>
     </dependency>

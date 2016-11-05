@@ -9,9 +9,21 @@ services:
       - "2181:2181"
 
   kappahz1:
-    image: olibs/kappahz:v2
+    image: olibs/kappahz
+    ports:
+          - "5701:5701"
 
   kappahz2:
-    image: olibs/kappahz:v2
-    ports:
-      - "5701:5701"
+    image: olibs/kappahz
+
+  kappahz3:
+      image: olibs/kappahz
+
+  kappahz4:
+        image: olibs/kappahz
+
+  kappahz5:
+        image: olibs/kappahz
+
+  kappahz6:
+        image: olibs/kappahz

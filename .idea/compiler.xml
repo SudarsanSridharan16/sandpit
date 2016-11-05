@@ -22,15 +22,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="database" />
         <module name="datagrid" />
         <module name="datastreams" />
         <module name="domain" />
         <module name="gearpump" />
         <module name="TradeLoader" />
-        <module name="TradeQuery" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="database" target="1.5" />
       <module name="datagrid" target="1.5" />
       <module name="datastreams" target="1.5" />
       <module name="domain" target="1.5" />

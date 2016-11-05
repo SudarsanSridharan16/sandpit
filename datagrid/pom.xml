@@ -23,18 +23,22 @@
             <groupId>com.example.projects</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.couchbase.client/java-client -->
+        <!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-client -->
         <dependency>
-            <groupId>com.couchbase.client</groupId>
-            <artifactId>java-client</artifactId>
-            <version>2.3.3</version>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>1.2.3</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.21</version>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
+
+
+
 
     </dependencies>
 

@@ -32,6 +32,7 @@
 
     <properties>
         <property name="hazelcast.discovery.enabled">true</property>
+        <property name="hazelcast.logging.type">log4j</property>
     </properties>
 
     <network>
@@ -45,7 +46,7 @@
                         <!--
                           Connection string to your ZooKeeper server.
                           Default: There is no default, this is a required property.
-                          Example: 127.0.0.1:2181
+                          Example: 127.0.0.1:2181 138.68.172.212
                         -->
                         <property name="zookeeper_url">138.68.172.212:2181</property>
                         <!--Path in ZooKeeper Hazelcast will useDefault: /discovery/hazelcast -->
