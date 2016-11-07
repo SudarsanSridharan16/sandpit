@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8482a472-6ef8-4014-aad6-cd82bc6420b2" name="Default" comment="Fixed Hz connectivity to Zookeeper, was caused by an issue with Curator version&#10;Cleaned up datagrid so it's just focused on creating the grid&#10;Added additional nodes to the datagrid docker-compose file&#10;Cleaned up data grid docker directory&#10;Moved database from Couchbase to HBase&#10;Created a new module database to specifically create the HBase schema and seed it with data">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/docker-dir/Dockerfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/src/main/java/com/example/projects/database/schema/SchemaBuilder.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/target/database-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/target/classes/com/example/projects/database/loaders/InstrumentLoader.class" afterPath="$PROJECT_DIR$/database/target/classes/com/example/projects/database/loaders/InstrumentLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/target/test-classes/com/example/projects/database/AppTest.class" afterPath="$PROJECT_DIR$/database/target/test-classes/com/example/projects/database/AppTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/database.iml" afterPath="$PROJECT_DIR$/database/database.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/pom.xml" afterPath="$PROJECT_DIR$/database/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/src/main/java/com/example/projects/database/loaders/InstrumentLoader.java" afterPath="$PROJECT_DIR$/database/src/main/java/com/example/projects/database/loaders/InstrumentLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/database/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/target/surefire-reports/TEST-com.example.projects.database.AppTest.xml" afterPath="$PROJECT_DIR$/database/target/surefire-reports/TEST-com.example.projects.database.AppTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/target/surefire-reports/com.example.projects.database.AppTest.txt" afterPath="$PROJECT_DIR$/database/target/surefire-reports/com.example.projects.database.AppTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/datagrid.iml" afterPath="$PROJECT_DIR$/datagrid/datagrid.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/target/surefire-reports/TEST-com.example.projects.AppTest.xml" afterPath="$PROJECT_DIR$/datagrid/target/surefire-reports/TEST-com.example.projects.AppTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datagrid/target/surefire-reports/com.example.projects.AppTest.txt" afterPath="$PROJECT_DIR$/datagrid/target/surefire-reports/com.example.projects.AppTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/target/surefire-reports/TEST-com.example.projects.TradeGeneratorTest.xml" afterPath="$PROJECT_DIR$/datastreams/target/surefire-reports/TEST-com.example.projects.TradeGeneratorTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datastreams/target/surefire-reports/com.example.projects.TradeGeneratorTest.txt" afterPath="$PROJECT_DIR$/datastreams/target/surefire-reports/com.example.projects.TradeGeneratorTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/target/surefire-reports/TEST-com.example.projects.AppTest.xml" afterPath="$PROJECT_DIR$/domain/target/surefire-reports/TEST-com.example.projects.AppTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearpump/target/surefire-reports/TEST-com.example.projects.AppTest.xml" afterPath="$PROJECT_DIR$/gearpump/target/surefire-reports/TEST-com.example.projects.AppTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gearpump/target/surefire-reports/com.example.projects.AppTest.txt" afterPath="$PROJECT_DIR$/gearpump/target/surefire-reports/com.example.projects.AppTest.txt" />
-    </list>
+    <list default="true" id="8482a472-6ef8-4014-aad6-cd82bc6420b2" name="Default" comment="Changed InstrumentLoader to create HBase table INSTRUMENT with CF FX&#10;Created SchemaBuilder to create table INSTRUMENT with multiple CFs" />
     <ignored path="sandpit.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -65,9 +41,11 @@
       <file leaf-file-name="SchemaBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/src/main/java/com/example/projects/database/schema/SchemaBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-540">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-600">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding>
+                <marker date="1478556919000" expanded="true" signature="55:405" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,6 +77,7 @@
         <option value="oliversalmon &lt;oliver.salmon@gmail.com&gt;" />
       </list>
     </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -1278,7 +1257,7 @@
       <workItem from="1478286951069" duration="291000" />
       <workItem from="1478287281569" duration="7601000" />
       <workItem from="1478345580647" duration="15734000" />
-      <workItem from="1478499748059" duration="12886000" />
+      <workItem from="1478499748059" duration="13333000" />
     </task>
     <task id="LOCAL-00001" summary="Added main methods for PartyLoader added domain package as a dependency in pom">
       <created>1476642969680</created>
@@ -1357,11 +1336,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478556536263</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changed InstrumentLoader to create HBase table INSTRUMENT with CF FX&#10;Created SchemaBuilder to create table INSTRUMENT with multiple CFs">
+      <created>1478556936135</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1478556936135</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185230000" />
+    <option name="totallyTimeSpent" value="185677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1454,7 +1440,8 @@
     <MESSAGE value="Fixed Hz connectivity to Zookeeper, was caused by an issue with Curator version&#10;Cleaned up datagrid so it's just focused on creating the grid&#10;Added additional nodes to the datagrid docker-compose file&#10;Cleaned up data grid docker directory&#10;Moved database from Couchbase to HBase&#10;Created a new module database to specifically create the HBase schema and seed it with data" />
     <MESSAGE value="Added log4j logging on debug" />
     <MESSAGE value="added debug logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="added debug logging" />
+    <MESSAGE value="Changed InstrumentLoader to create HBase table INSTRUMENT with CF FX&#10;Created SchemaBuilder to create table INSTRUMENT with multiple CFs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed InstrumentLoader to create HBase table INSTRUMENT with CF FX&#10;Created SchemaBuilder to create table INSTRUMENT with multiple CFs" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1462,7 +1449,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/database/src/main/java/com/example/projects/database/loaders/InstrumentLoader.java</url>
-          <line>60</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -1789,9 +1776,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/src/main/java/com/example/projects/database/schema/SchemaBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-600">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <marker date="1478556919000" expanded="true" signature="55:405" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
