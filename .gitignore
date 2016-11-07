@@ -12,4 +12,7 @@ sandpit.iml
 /gearpump/gearpump.iml
 /TradeQuery/TradeQuery.iml
 /sandpit.iml
-/.idea/
+/.idea/*
+/muhzlogging.log
+/hbasecreatelogging.log
+/database/database.iml
