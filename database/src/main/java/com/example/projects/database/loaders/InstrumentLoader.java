@@ -7,11 +7,8 @@ import com.example.projects.domain.enums.FXInstrumentEnum;
 import com.example.projects.domain.enums.TenorEnum;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
-import org.apache.hadoop.hbase.HColumnDescriptor;
-import org.apache.hadoop.hbase.HTableDescriptor;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.*;
-import org.apache.hadoop.hbase.io.compress.Compression.Algorithm;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.log4j.Logger;
 
@@ -43,11 +40,11 @@ public class InstrumentLoader {
 
 
         Logger logger = Logger.getLogger(InstrumentLoader.class);
-
-
-
-
         Instrument instrument = new Instrument();
+
+
+
+
         try{
 
             Configuration hBaseConfig =  HBaseConfiguration.create();
@@ -61,10 +58,6 @@ public class InstrumentLoader {
             Admin admin = connection.getAdmin();
             logger.info("Master Info Port: "+admin.getMasterInfoPort());
             logger.info("Connected to HBase");
-
-            logger.info("Trying to create tables");
-            createSchemaTables(admin);
-            logger.info("Tables created");
 
             //Create the instrument dimension static for FX
             TableName tname = TableName.valueOf(tableName);
@@ -115,18 +108,7 @@ public class InstrumentLoader {
 
     }
 
-    public static void createSchemaTables(Admin admin) throws IOException {
 
 
 
-        HTableDescriptor table = new HTableDescriptor(TableName.valueOf(tableName));
-        HColumnDescriptor cf = new HColumnDescriptor(columnFamily).setCompressionType(Algorithm.NONE);
-
-        table.addFamily(cf);
-
-        System.out.print("Creating table. ");
-        admin.createTable(table);
-        System.out.println(" Done.");
-
-    }
 }
