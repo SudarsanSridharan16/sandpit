@@ -4,9 +4,7 @@ import com.example.projects.domain.Instrument;
 import com.example.projects.domain.Party;
 import com.example.projects.domain.Trade;
 import com.example.projects.domain.Venue;
-import com.example.projects.domain.enums.TradeTypeEnum;
-import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
+import com.example.projects.domain.enums.*;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.joda.time.DateTime;
@@ -73,22 +71,17 @@ public class TradeGenerator
     {
 
         Logger LOG = LoggerFactory.getLogger(TradeGenerator.class);
-        // Get the dimension cached data
-        HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance();
-        Map<String, Venue> venuesCache = hazelcastInstance.getReplicatedMap("venue");
-        Map<String, Venue> partiesCache = hazelcastInstance.getReplicatedMap("party");
-        Map<String, Venue> instrumentsCache = hazelcastInstance.getReplicatedMap("instrument");
 
-        Venue[] venues = new Venue[venuesCache.size()];
-        venues = venuesCache.values().toArray(venues);
-        Party[] parties = new Party[partiesCache.size()];
-        parties = partiesCache.values().toArray(parties);
-        Instrument[] instruments = new Instrument[instrumentsCache.size()];
-        instruments = instrumentsCache.values().toArray(instruments);
+
+        Venue[] venues = getVenues();
+        Party[] parties = getParties();
+
+        Instrument[] instruments = getInstruments();
+
         final int numTrades = 10;
 
         // Generate the test data
-
+        LOG.info("Connecting to Kafka");
         // Coonect to Kafka
        KafkaProducer<Integer, String> producer;
         final String topic = "trades";
@@ -99,13 +92,14 @@ public class TradeGenerator
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         producer = new KafkaProducer<Integer, String>(props);
         long start = System.currentTimeMillis();
+        LOG.info("Creating trades");
         for(int i=0;i<numTrades;i++) {
             Trade trade = new Trade();
             trade.setTradeId(UUID.randomUUID().toString());
             trade.setAltTradeIds(new HashMap<String, String>());
             trade.setExecutionVenue(getVenue(venues));
             trade.setCurrencyPair(getInstrumnet(instruments).getCurrencyPair());
-            trade.setInstrument(getInstrumnet(instruments).getSymbol());
+            trade.setInstrument(getInstrumnet(instruments));
             trade.setMarketId(getVenue(venues).getName());
             trade.setOriginalTradeDate(new DateTime(new Date()));
             trade.setPrice(getPrice());
@@ -130,6 +124,57 @@ public class TradeGenerator
         long end = System.currentTimeMillis();
         LOG.info(numTrades+" Trades created and queued in " +(end-start)/1000+"seconds");
 
+        }
+
+        private static Instrument[] getInstruments(){
+            final String[] currencyPairs =   {"EURUSD", "USDJPY", "GBPUSD", "USDCHF", "USDCAD", "AUDUSD", "NZDUSD",
+                    "EURJPY", "GBPJPY", "CHFJPY", "CADJPY", "AUDJPY", "NZDJPY", "GBPCHF", "GBPAUD",
+                    "GBPCAD", "GBPNZD", "AUDCHF", "AUDCAD", "AUDNZD"};
+            final String[] instrumentTypes =   {"SPOT", "FORWARD", "SWAP", "NDF"};
+            final String[] tenors =  {"SPOT", "OneM", "TwoM", "ThreeM", "SixM"};
+            ArrayList<Instrument> result = new ArrayList<Instrument>();
+            Instrument instrument = new Instrument();
+
+            for (String type : instrumentTypes) {
+
+                for (String pair : currencyPairs) {
+                    for (String tenor : tenors) {
+                        if (type == FXInstrumentEnum.SPOT.toString()) {
+                            instrument = new Instrument(type + " " + pair + " " + TenorEnum.SPOT.toString(), FXInstrumentEnum.valueOf(type),
+                                    TenorEnum.SPOT, CurrencyPairEnum.valueOf(pair));
+                        } else {
+                            instrument = new Instrument(type + " " + pair + " " + tenor, FXInstrumentEnum.valueOf(type),
+                                    TenorEnum.valueOf(tenor), CurrencyPairEnum.valueOf(pair));
+                        }
+                        result.add(instrument);
+
+                    }
+                }
+            }
+
+            return result.toArray(new Instrument[result.size()]);
+        }
+
+        private static Party[] getParties(){
+            ArrayList<Party> result = new ArrayList<Party>();
+            final String[] counterParties = {"Blackrock", "GSAM", "UBSGAM", "Fidelity", "Bloomberg", "ICAP", "Tullet"};
+            for (int i = 0; i < counterParties.length; i++) {
+                Party party = new Party(UUID.randomUUID().toString(), PartyRoleEnum.valueOf("CLIENT"), new HashMap<String, Party>());
+                result.add(party);
+            }
+            return result.toArray(new Party[result.size()]);
+        }
+
+        private static Venue[] getVenues(){
+            ArrayList<Venue> result = new ArrayList<Venue>();
+            final String[] executionVenues = {"FXALL", "LMAX", "", "Currenex", "Bloomberg", "ICAP", "Tullet", "360T", "EBS", "CME"};
+
+            for (int i = 0; i < executionVenues.length; i++) {
+                Venue venue = new Venue(UUID.randomUUID().toString(), executionVenues[i], VenueTypeEnum.valueOf("ELECTRONIC"));
+                result.add(venue);
+            }
+
+            return result.toArray(new Venue[result.size()]);
         }
 
     }

@@ -1,5 +1,4 @@
 /Users/oliverbuckley-salmon/IdeaProjects/sandpit/database/src/main/java/com/example/projects/database/loaders/InstrumentLoader.java
-/Users/oliverbuckley-salmon/IdeaProjects/sandpit/database/src/main/java/com/example/projects/database/loaders/PartyLoader.java
-/Users/oliverbuckley-salmon/IdeaProjects/sandpit/database/src/main/java/com/example/projects/database/App.java
 /Users/oliverbuckley-salmon/IdeaProjects/sandpit/database/src/main/java/com/example/projects/database/loaders/VenueLoader.java
-/Users/oliverbuckley-salmon/IdeaProjects/sandpit/database/src/main/java/com/example/projects/database/schema/SchemaBuilder.java
+/Users/oliverbuckley-salmon/IdeaProjects/sandpit/database/src/main/java/com/example/projects/database/schema/MuSchemaCreator.java
+/Users/oliverbuckley-salmon/IdeaProjects/sandpit/database/src/main/java/com/example/projects/database/loaders/PartyLoader.java

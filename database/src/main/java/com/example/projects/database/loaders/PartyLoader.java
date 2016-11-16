@@ -2,11 +2,9 @@ package com.example.projects.database.loaders;
 
 import com.example.projects.domain.Party;
 import com.example.projects.domain.enums.PartyRoleEnum;
-import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -19,27 +17,22 @@ public class PartyLoader {
 
     //argv[0] should be 'GENERATE' or 'LOAD' if load then argv[1] should contain the path to the file to load
     public static void main(String[] argv) {
-        if (argv[0].equalsIgnoreCase("GENERATE")) {
-            generateRandomParties();
-        } else if (argv[0].equalsIgnoreCase("LOAD")) {
-            loadPartyFile(argv[1]);
-        }
+        Party[] parties = getParties();
+
 
 
     }
 
-    private static void generateRandomParties() {
-        HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance();
-        Map<String, Party> partyCache = hazelcastInstance.getReplicatedMap("party");
+
+
+    private static Party[] getParties(){
+        ArrayList<Party> result = new ArrayList<Party>();
+        final String[] counterParties = {"Blackrock", "GSAM", "UBSGAM", "Fidelity", "Bloomberg", "ICAP", "Tullet"};
         for (int i = 0; i < counterParties.length; i++) {
             Party party = new Party(UUID.randomUUID().toString(), PartyRoleEnum.valueOf("CLIENT"), new HashMap<String, Party>());
-            partyCache.put(party.getPartyId(), party);
+            result.add(party);
         }
-        System.out.println(partyCache.size() + "Parties loaded");
-    }
-
-    private static void loadPartyFile(String path) {
-
+        return result.toArray(new Party[result.size()]);
     }
 
 }

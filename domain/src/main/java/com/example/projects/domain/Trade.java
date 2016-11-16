@@ -34,7 +34,7 @@ public class Trade implements Portable{
     ,              price;
     private CurrencyPairEnum currencyPair;
     private Venue executionVenue;
-    private String Instrument;
+    private Instrument instrument;
     // Dimension Ids
     private String  instrumentDimId
     ,               executionVenueDimId
@@ -43,7 +43,7 @@ public class Trade implements Portable{
     public Trade() {
     }
 
-    public Trade(String tradeId, HashMap<String, String> altTradeIds, TradeTransactionTypeEnum tradeTransactionType, TradeTypeEnum tradeType, TradeTypeEnum secondaryTradeTypeEnum, DateTime originalTradeDate, HashMap<String, Party> parties, String marketId, double quantity, double price, CurrencyPairEnum currencyPair, Venue executionVenue, String instrument) {
+    public Trade(String tradeId, HashMap<String, String> altTradeIds, TradeTransactionTypeEnum tradeTransactionType, TradeTypeEnum tradeType, TradeTypeEnum secondaryTradeTypeEnum, DateTime originalTradeDate, HashMap<String, Party> parties, String marketId, double quantity, double price, CurrencyPairEnum currencyPair, Venue executionVenue, Instrument instrument) {
         this.tradeId = tradeId;
         this.altTradeIds = altTradeIds;
         this.tradeTransactionType = tradeTransactionType;
@@ -56,7 +56,7 @@ public class Trade implements Portable{
         this.price = price;
         this.currencyPair = currencyPair;
         this.executionVenue = executionVenue;
-        Instrument = instrument;
+        this.instrument = instrument;
     }
 
     public int getFactoryId() {
@@ -163,12 +163,12 @@ public class Trade implements Portable{
         this.executionVenue = executionVenue;
     }
 
-    public String getInstrument() {
-        return Instrument;
+    public Instrument getInstrument() {
+        return instrument;
     }
 
-    public void setInstrument(String instrument) {
-        Instrument = instrument;
+    public void setInstrument(Instrument instrument) {
+        this.instrument = instrument;
     }
 
     public String getInstrumentDimId() {
@@ -213,7 +213,7 @@ public class Trade implements Portable{
         out.writeDouble("quantity", quantity);
         out.writeDouble("price", price);
         out.writePortable("executionVenue", executionVenue);
-        out.writeUTF("Instrument", Instrument);
+
         out.writeUTF("instrumentDimId", instrumentDimId);
         out.writeUTF("executionVenueDimId", executionVenueDimId);
         out.writeUTF("counterPartyDimId", counterPartyDimId);
@@ -225,6 +225,7 @@ public class Trade implements Portable{
         rawDataOutput.writeObject(originalTradeDate);
         rawDataOutput.writeObject(parties);
         rawDataOutput.writeObject(currencyPair);
+        rawDataOutput.writeObject(instrument);
     }
 
 
@@ -234,7 +235,7 @@ public class Trade implements Portable{
         this.quantity = in.readDouble("quantity");
         this.price = in.readDouble("price");
         this.executionVenue = in.readPortable("executionVenue");
-        this.Instrument = in.readUTF("Instrument");
+
         this.instrumentDimId = in.readUTF("instrumentDimId");
         this.executionVenueDimId = in.readUTF("executionVenueDimId");
         this.counterPartyDimId = in.readUTF("counterPartyDimId");
@@ -246,5 +247,6 @@ public class Trade implements Portable{
         this.originalTradeDate = rawDataInput.readObject();
         this.parties = rawDataInput.readObject();
         this.currencyPair = rawDataInput.readObject();
+        this.instrument = rawDataInput.readObject();
     }
 }

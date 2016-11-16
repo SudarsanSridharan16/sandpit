@@ -30,15 +30,13 @@
         <module name="TradeLoader" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="database" target="1.5" />
       <module name="datagrid" target="1.5" />
       <module name="datastreams" target="1.5" />
       <module name="domain" target="1.5" />
-      <module name="gearpump" target="1.5" />
+      <module name="gearpump" target="1.8" />
       <module name="sandpit" target="1.5" />
-      <module name="TradeLoader" target="1.8" />
-      <module name="TradeQuery" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

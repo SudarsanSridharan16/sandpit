@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>sandpit</artifactId>
@@ -15,24 +15,58 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <build.final.name>mu-gearpump-${project.version}</build.final.name>
     </properties>
 
     <dependencies>
-            <dependency>
-                <groupId>com.github.intel-hadoop</groupId>
-                <artifactId>gearpump-core_2.11</artifactId>
-                <version>0.7.5</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.intel-hadoop</groupId>
-                <artifactId>gearpump-streaming_2.11</artifactId>
-                <version>0.7.5</version>
-            </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.intel-hadoop/gearpump-external-kafka_2.11 -->
         <dependency>
-            <groupId>com.github.intel-hadoop</groupId>
+            <artifactId>domain</artifactId>
+            <groupId>com.example.projects</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <artifactId>datagrid</artifactId>
+            <groupId>com.example.projects</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
+
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.gearpump/gearpump-core_2.11 -->
+        <dependency>
+            <groupId>org.apache.gearpump</groupId>
+            <artifactId>gearpump-core_2.11</artifactId>
+            <version>0.8.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.gearpump/gearpump-streaming_2.11 -->
+        <dependency>
+            <groupId>org.apache.gearpump</groupId>
+            <artifactId>gearpump-streaming_2.11</artifactId>
+            <version>0.8.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.gearpump/gearpump-external-kafka_2.11 -->
+        <dependency>
+            <groupId>org.apache.gearpump</groupId>
             <artifactId>gearpump-external-kafka_2.11</artifactId>
-            <version>0.7.5</version>
+            <version>0.8.1</version>
+        </dependency>
+
+
+
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.6.2</version>
         </dependency>
 
         <dependency>
@@ -49,43 +83,26 @@
             <name>Sonatype Releases Repository</name>
             <url>http://oss.sonatype.org/content/repositories/releases/</url>
         </repository>
-
         <repository>
             <id>akka-data-replication</id>
             <name>Patrik at Bintray</name>
             <url>http://dl.bintray.com/patriknw/maven</url>
         </repository>
-
-        <repository>
-            <id>cloudera</id>
-            <name>Cloudera repo</name>
-            <url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
-        </repository>
-
-        <repository>
-            <id>vincent</id>
-            <name>vincent</name>
-            <url>http://dl.bintray.com/fvunicorn/maven</url>
-        </repository>
-
         <repository>
             <id>non</id>
             <name>non</name>
             <url>http://dl.bintray.com/non/maven</url>
         </repository>
-
         <repository>
             <id>maven-repo</id>
             <name>maven-repo</name>
             <url>http://repo.maven.apache.org/maven2</url>
         </repository>
-
         <repository>
             <id>maven1-repo</id>
             <name>maven1-repo</name>
             <url>http://repo1.maven.org/maven2</url>
         </repository>
-
         <repository>
             <id>maven2-repo</id>
             <name>maven2-repo</name>
@@ -93,4 +110,75 @@
         </repository>
 
     </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <finalName>${build.final.name}</finalName>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.example.projects.gearpump.TradeFactBuilder</mainClass>
+                            <classpathPrefix>dependency-jars/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>attached</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <finalName>${build.final.name}</finalName>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <mainClass>com.example.projects.gearpump.TradeFactBuilder</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+    <profile>
+    <id>qa</id>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    </profile>
+    </profiles>
 </project>

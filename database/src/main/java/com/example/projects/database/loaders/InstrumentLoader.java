@@ -26,7 +26,7 @@ public class InstrumentLoader {
                                                     "GBPCAD", "GBPNZD", "AUDCHF", "AUDCAD", "AUDNZD"};
     private static final String[] instrumentTypes =   {"SPOT", "FORWARD", "SWAP", "NDF"};
     private static final String[] tenors =  {"SPOT", "OneM", "TwoM", "ThreeM", "SixM"};
-    private static final byte[] tableName = Bytes.toBytes("INSTRUMMENT");
+    private static final byte[] tableName = Bytes.toBytes("INSTRUMENT");
     private static final byte[] columnFamily = Bytes.toBytes("FX");
     private static final byte[] instrumentIdQual = Bytes.toBytes("id");
     private static final byte[] symbolQual = Bytes.toBytes("sym");
@@ -76,22 +76,23 @@ public class InstrumentLoader {
                             instrument = new Instrument(type + " " + pair + " " + tenor, FXInstrumentEnum.valueOf(type),
                                     TenorEnum.valueOf(tenor), CurrencyPairEnum.valueOf(pair));
                             }
+                        byte[] pk = Bytes.toBytes(UUID.randomUUID().toString());
+                        byte[] instrumentid = Bytes.toBytes(instrument.getSymbol());
+                        byte[] instrumentType = Bytes.toBytes(instrument.getInstrumentType().toString());
+                        byte[] tenors = Bytes.toBytes(instrument.getTenor().toString());
+                        byte[] currencyPair = Bytes.toBytes(instrument.getCurrencyPair().toString());
+                        Put put = new Put(pk);
+                        put.addImmutable(columnFamily,instrumentIdQual,instrumentid);
+                        put.addImmutable(columnFamily,typeQual,instrumentType);
+                        put.addImmutable(columnFamily,tenorQual,tenors);
+                        put.addImmutable(columnFamily,currencyPairQual,currencyPair);
+                        logger.info("Created immutable record " + instrument.toJSON());
+                        t.put(put);
+                        logger.info("Inserted immutable record" + instrument.toJSON());
 
                     }
                 }
-                byte[] pk = Bytes.toBytes(UUID.randomUUID().toString());
-                byte[] instrumentid = Bytes.toBytes(instrument.getSymbol());
-                byte[] instrumentType = Bytes.toBytes(instrument.getInstrumentType().toString());
-                byte[] tenor = Bytes.toBytes(instrument.getTenor().toString());
-                byte[] currencyPair = Bytes.toBytes(instrument.getCurrencyPair().toString());
-                Put put = new Put(pk);
-                put.addImmutable(columnFamily,instrumentIdQual,instrumentid);
-                put.addImmutable(columnFamily,typeQual,instrumentType);
-                put.addImmutable(columnFamily,tenorQual,tenor);
-                put.addImmutable(columnFamily,currencyPairQual,currencyPair);
-                logger.info("Created immutable record " + instrument.toJSON());
-                t.put(put);
-                logger.info("Inserted immutable record" + instrument.toJSON());
+
 
 
             }

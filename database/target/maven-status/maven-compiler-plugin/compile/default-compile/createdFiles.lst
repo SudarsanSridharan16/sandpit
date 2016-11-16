@@ -1,5 +1,4 @@
-com/example/projects/database/loaders/InstrumentLoader.class
 com/example/projects/database/loaders/VenueLoader.class
-com/example/projects/database/schema/SchemaBuilder.class
-com/example/projects/database/App.class
+com/example/projects/database/schema/MuSchemaCreator.class
+com/example/projects/database/loaders/InstrumentLoader.class
 com/example/projects/database/loaders/PartyLoader.class

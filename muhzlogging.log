@@ -2733,3 +2733,27 @@ Caused by: java.net.UnknownHostException: a826d5422c4d
 2016-11-04 22:17:41 INFO  CuratorFrameworkImpl:821 - backgroundOperationsLoop exiting
 2016-11-04 22:17:41 INFO  ZooKeeper:684 - Session: 0x15830869abd000c closed
 2016-11-04 22:17:41 INFO  ClientCnxn:512 - EventThread shut down
+2016-11-12 18:50:33 INFO  ClusterConfig$:95 - loading config file application.conf...
+2016-11-12 18:50:35 INFO  Slf4jLogger:80 - Slf4jLogger started
+2016-11-12 18:50:35 INFO  Remoting:74 - Starting remoting
+2016-11-12 18:50:36 INFO  Remoting:74 - Remoting started; listening on addresses :[akka.tcp://client264599190@127.0.0.1:59713]
+2016-11-12 18:50:36 INFO  Metrics$:125 - Metrics is enabled...,  false
+2016-11-12 18:50:36 INFO  ClientContext:59 - Starting system client264599190
+2016-11-12 18:51:42 INFO  ClusterConfig$:95 - loading config file application.conf...
+2016-11-12 18:51:43 INFO  Slf4jLogger:80 - Slf4jLogger started
+2016-11-12 18:51:44 INFO  Remoting:74 - Starting remoting
+2016-11-12 18:51:44 INFO  Remoting:74 - Remoting started; listening on addresses :[akka.tcp://client127785590@127.0.0.1:59732]
+2016-11-12 18:51:44 INFO  Metrics$:125 - Metrics is enabled...,  false
+2016-11-12 18:51:44 INFO  ClientContext:59 - Starting system client127785590
+2016-11-12 18:52:10 INFO  ClusterConfig$:95 - loading config file application.conf...
+2016-11-12 18:52:14 INFO  Slf4jLogger:80 - Slf4jLogger started
+2016-11-12 18:52:14 INFO  Remoting:74 - Starting remoting
+2016-11-12 18:52:15 INFO  Remoting:74 - Remoting started; listening on addresses :[akka.tcp://client779380629@127.0.0.1:59737]
+2016-11-12 18:52:15 INFO  Metrics$:125 - Metrics is enabled...,  false
+2016-11-12 18:52:15 INFO  ClientContext:59 - Starting system client779380629
+2016-11-12 20:17:49 INFO  ClusterConfig$:95 - loading config file application.conf...
+2016-11-12 20:17:54 INFO  Slf4jLogger:80 - Slf4jLogger started
+2016-11-12 20:17:55 INFO  Remoting:74 - Starting remoting
+2016-11-12 20:17:55 INFO  Remoting:74 - Remoting started; listening on addresses :[akka.tcp://client1640969152@127.0.0.1:60772]
+2016-11-12 20:17:56 INFO  Metrics$:125 - Metrics is enabled...,  false
+2016-11-12 20:17:56 INFO  ClientContext:59 - Starting system client1640969152
