@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export GEARPUMP_HOME=/root/apps/gearpump-2.11-0.8.1
+export GEARPUMP_HOME=/Users/oliverbuckley-salmon/devApps/gearpump-2.11-0.8.1
 
 docker run -d \
  -h master0 --name master0 \

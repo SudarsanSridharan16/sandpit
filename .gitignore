@@ -1,20 +1,12 @@
 
 .DS_Store
 
-
-
-datagrid/datagrid.iml
-
-sandpit.iml
-
+/sandpit.iml
 /datastreams/datastreams.iml
 /domain/domain.iml
 /gearpump/gearpump.iml
-/TradeQuery/TradeQuery.iml
-/sandpit.iml
+/datagrid/datagrid.iml
+
 /.idea/*
-/muhzlogging.log
-/hbasecreatelogging.log
-/database/database.iml
-/.idea/
-/tradeloaderlogging.log
+/*.log
+

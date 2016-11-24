@@ -159,7 +159,7 @@ public class TradeGenerator
             ArrayList<Party> result = new ArrayList<Party>();
             final String[] counterParties = {"Blackrock", "GSAM", "UBSGAM", "Fidelity", "Bloomberg", "ICAP", "Tullet"};
             for (int i = 0; i < counterParties.length; i++) {
-                Party party = new Party(UUID.randomUUID().toString(), PartyRoleEnum.valueOf("CLIENT"), new HashMap<String, Party>());
+                Party party = new Party(UUID.randomUUID().toString(), counterParties[i], PartyRoleEnum.valueOf("CLIENT"), new HashMap<String, Party>());
                 result.add(party);
             }
             return result.toArray(new Party[result.size()]);

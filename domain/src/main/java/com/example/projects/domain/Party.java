@@ -20,14 +20,16 @@ public class Party implements Portable{
     public static final int ID = 3;
 
     private String partyId;
+    private String partyName;
     private PartyRoleEnum partyRole;
     private HashMap<String,Party> subParties;
 
     public Party() {
     }
 
-    public Party(String partyId, PartyRoleEnum partyRole, HashMap<String, Party> subParties) {
+    public Party(String partyId, String partyName, PartyRoleEnum partyRole, HashMap<String, Party> subParties) {
         this.partyId = partyId;
+        this.partyName = partyName;
         this.partyRole = partyRole;
         this.subParties = subParties;
     }
@@ -64,10 +66,17 @@ public class Party implements Portable{
         this.subParties = subParties;
     }
 
+    public String getPartyName() {
+        return partyName;
+    }
 
+    public void setPartyName(String partyName) {
+        this.partyName = partyName;
+    }
 
     public void writePortable(PortableWriter out) throws IOException {
         out.writeUTF("partyId", partyId);
+        out.writeUTF("partyName", partyName);
         ObjectDataOutput rawDataOutput = out.getRawDataOutput();
         rawDataOutput.writeObject(partyRole);
         rawDataOutput.writeObject(subParties);
@@ -76,6 +85,7 @@ public class Party implements Portable{
 
     public void readPortable(PortableReader in) throws IOException {
         this.partyId = in.readUTF("partyId");
+        this.partyName = in.readUTF("partyName");
         ObjectDataInput rawDataInput = in.getRawDataInput();
         this.partyRole = rawDataInput.readObject();
         this.subParties = rawDataInput.readObject();
