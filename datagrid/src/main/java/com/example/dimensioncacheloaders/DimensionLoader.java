@@ -1,8 +1,8 @@
 package com.example.dimensioncacheloaders;
 
-import com.example.com.example.project.datagrid.mapstore.InstrumentMapStore;
-import com.example.com.example.project.datagrid.mapstore.PartyMapStore;
-import com.example.com.example.project.datagrid.mapstore.VenueMapStore;
+import com.example.project.datagrid.mapstore.InstrumentMapStore;
+import com.example.project.datagrid.mapstore.PartyMapStore;
+import com.example.project.datagrid.mapstore.VenueMapStore;
 import com.example.projects.domain.Instrument;
 import com.example.projects.domain.Party;
 import com.example.projects.domain.Venue;

@@ -21,9 +21,9 @@
     - no hazelcast.xml if present
 
 -->
-<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.7.xsd"
-           xmlns="http://www.hazelcast.com/schema/config"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<hazelcast xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.7.xsd"
+           xmlns="http://www.hazelcast.com/schema/config">
     <group>
         <name>kappa-serving-layer</name>
         <password>kappa-password</password>
@@ -112,7 +112,7 @@
 			will get automatically evicted from the map.
 			Any integer between 0 and Integer.MAX_VALUE. 0 means infinite. Default is 0.
 		-->
-        <time-to-live-seconds>0</time-to-live-seconds>
+        <time-to-live-seconds>864000</time-to-live-seconds>
         <!--
 			Maximum number of seconds for each entry to stay idle in the map. Entries that are
 			idle(not touched) for more than <max-idle-seconds> will get
@@ -127,14 +127,14 @@
             LFU (Least Frequently Used).
             NONE is the default.
         -->
-        <eviction-policy>NONE</eviction-policy>
+        <eviction-policy>LFU</eviction-policy>
         <!--
             Maximum size of the map. When max size is reached,
             map is evicted based on the policy defined.
             Any integer between 0 and Integer.MAX_VALUE. 0 means
             Integer.MAX_VALUE. Default is 0.
         -->
-        <max-size policy="PER_NODE">0</max-size>
+        <max-size policy="PER_NODE">1000000</max-size>
         <!--
             When max. size is reached, specified percentage of
             the map will be evicted. Any integer between 0 and 100.
@@ -164,6 +164,14 @@
             com.hazelcast.map.merge.LatestUpdateMapMergePolicy ; entry with the latest update wins.
         -->
         <merge-policy>com.hazelcast.map.merge.PutIfAbsentMapMergePolicy</merge-policy>
+
+        <map-store enabled="true" initial-mode="LAZY">
+            <class-name>com.example.project.datagrid.mapstore.TradeMapStore</class-name>
+            <write-delay-seconds>30</write-delay-seconds>
+            <write-batch-size>1000</write-batch-size>
+            <write-coalescing>false</write-coalescing>
+        </map-store>
+    </map>
 
     </map>
 
