@@ -32,6 +32,15 @@
         </discovery-strategies>
     </network>
 
+    <near-cache name="trade">
+        <max-size>2000</max-size>
+        <time-to-live-seconds>0</time-to-live-seconds>
+        <max-idle-seconds>0</max-idle-seconds>
+        <eviction-policy>LFU</eviction-policy>
+        <invalidate-on-change>true</invalidate-on-change>
+        <in-memory-format>OBJECT</in-memory-format>
+    </near-cache>
+
     <near-cache name="party">
         <max-size>2000</max-size>
         <time-to-live-seconds>0</time-to-live-seconds>
@@ -62,7 +71,7 @@
     <serialization>
         <portable-version>0</portable-version>
         <portable-factories>
-            <portable-factory factory-id="1">com.example.projects.portablefactory.KappaPortableFactory</portable-factory>
+            <portable-factory factory-id="1">com.example.datagrid.portablefactory.KappaPortableFactory</portable-factory>
         </portable-factories>
     </serialization>
 

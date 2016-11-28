@@ -130,7 +130,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.example.projects.gearpump.TradeFactBuilder</mainClass>
+                            <mainClass>com.example.datagrid.projects.gearpump.TradeFactBuilder</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>
@@ -158,7 +158,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.example.projects.gearpump.TradeFactBuilder</mainClass>
+                                    <mainClass>com.example.datagrid.projects.gearpump.TradeFactBuilder</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

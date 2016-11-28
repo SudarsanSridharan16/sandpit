@@ -62,7 +62,7 @@
     <serialization>
         <portable-version>0</portable-version>
         <portable-factories>
-            <portable-factory factory-id="1">com.example.projects.portablefactory.KappaPortableFactory</portable-factory>
+            <portable-factory factory-id="1">com.example.datagrid.portablefactory.KappaPortableFactory</portable-factory>
         </portable-factories>
     </serialization>
 

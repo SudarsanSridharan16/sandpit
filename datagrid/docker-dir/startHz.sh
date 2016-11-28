@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
 
-java -server -classpath /opt/hazelcast/dimCacheLoader-1.0-SNAPSHOT-jar-with-dependencies.jar -Dhazelcast.rest.enabled=true -Dhazelcast.config=sandpit-cache-config.xml -Dhazelcast.logging.type=log4j -Dlog4j.configurationFile=log4j.properties com.hazelcast.core.server.StartServer
+java -server -classpath opt/hazelcast/lib/hazelcast-all-3.7.2.jar:/opt/hazelcast/lib/* -Dhazelcast.rest.enabled=true -Dhazelcast.config=/opt/hazelcast/sandpit-cache-config.xml -Dhazelcast.logging.type=log4j -Dlog4j.configurationFile=/opt/hazelcast/log4j.properties com.hazelcast.core.server.StartServer
+

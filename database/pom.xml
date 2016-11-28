@@ -55,7 +55,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.example.projects.database.schema.MuSchemaCreator</mainClass>
+                            <mainClass>com.example.datagrid.projects.database.schema.MuSchemaCreator</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>
@@ -83,7 +83,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.example.projects.database.schema.MuSchemaCreator</mainClass>
+                                    <mainClass>com.example.datagrid.projects.database.schema.MuSchemaCreator</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

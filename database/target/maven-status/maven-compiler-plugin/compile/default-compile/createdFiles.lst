@@ -1,4 +1,4 @@
-com/example/projects/database/loaders/VenueLoader.class
-com/example/projects/database/schema/MuSchemaCreator.class
-com/example/projects/database/loaders/InstrumentLoader.class
-com/example/projects/database/loaders/PartyLoader.class
+com/example/datagrid/projects/database/loaders/PartyLoader.class
+com/example/datagrid/projects/database/schema/MuSchemaCreator.class
+com/example/datagrid/projects/database/loaders/VenueLoader.class
+com/example/datagrid/projects/database/loaders/InstrumentLoader.class

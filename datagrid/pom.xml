@@ -15,7 +15,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <build.final.name>dimCacheLoader-${project.version}</build.final.name>
+        <build.final.name>cachewarmer-${project.version}</build.final.name>
     </properties>
 
     <dependencies>
@@ -54,11 +54,11 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <finalName>${build.final.name}</finalName>
+                    <finalName>datagrid-${project.version}</finalName>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.example.dimensioncacheloaders.DimensionLoader</mainClass>
+                            <mainClass>com.hazelcast.core.server.StartServer</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>
@@ -86,9 +86,23 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.example.dimensioncacheloaders.DimensionLoader</mainClass>
+                                    <mainClass>com.example.datagrid.cachewarmer.CacheReader</mainClass>
                                 </manifest>
                             </archive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>docker-dir/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
